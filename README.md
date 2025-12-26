@@ -1,65 +1,88 @@
-# Weather App (HTML, CSS, JavaScript)
+🌦️ Weather App – OpenWeather API
 
-A small client-side Weather App that uses OpenWeather APIs to show current weather and a 5-day forecast.
+HTML • CSS • JavaScript
 
-## Files (exactly)
-- index.html
-- style.css
-- script.js
+A client-side weather application developed as part of an ELEC 3 API project, demonstrating API integration, asynchronous data fetching, input validation, and responsive UI design using pure HTML, CSS, and JavaScript.
 
-## Features
-- Search weather by city name
-- Shows: city name, temperature (°C), humidity, weather icon (emoji), and 5-day forecast
-- Day / Night (light/dark) mode
-- Input validation and error handling
-- Loading indicator while fetching
+📁 Project Structure
 
-## Setup
-1. Replace the API key placeholder in `script.js` with your OpenWeather API key. Edit the `API_KEY` constant near the top of the file and set your key:
+This project strictly follows the three-file requirement:
 
-```javascript
-// script.js
-const API_KEY = "YOUR_ACTUAL_KEY_HERE";
-```
+index.html
+style.css
+script.js
 
-2. (Optional) If you prefer the key in a separate file named `config.js`, create it with this content:
 
-```javascript
-// config.js
-const API_KEY = "YOUR_ACTUAL_KEY_HERE";
-```
+No inline CSS or JavaScript is used.
 
-Then include it before `script.js` in `index.html`:
+✨ Features
 
-```html
-<script src="config.js"></script>
-<script src="script.js"></script>
-```
+Search current weather by city name
 
-> Note: The original implementation places the placeholder in `script.js`. Moving the key to `config.js` will add a fourth file to the project.
+Displays:
 
-## Run / Preview
-Open `index.html` in a browser. For best results run a simple local server (recommended):
+City name
 
-```powershell
-# Python 3
-python -m http.server 8000
-# then open http://localhost:8000
-```
+Temperature (°C)
 
-Or using npx http-server:
+Humidity
 
-```powershell
-npx http-server -p 8000
-```
+Weather condition icon
 
-## API details (where implemented)
-The code comments in `script.js` show the base URLs and endpoints used:
-- Geocoding (direct): `http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit=1&appid={API key}`
-- One Call (current + daily): `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,alerts&units=metric&appid={API key}`
+5-day forecast
 
-## Notes
-- The app uses `fetch()` with `async/await`, includes input trimming and basic error handling for network and API errors.
-- Icons are lightweight emoji chosen from weather conditions (sun/cloud/rain/etc.). You can replace them with images if desired by editing `pickIcon()` in `script.js`.
+Light/Dark mode toggle
 
-If you want, I can move the key to `config.js` (this will add a fourth file), or wire SVG icons instead of emoji. Which would you prefer?
+Input validation and user-friendly error handling
+
+Loading indicator during API requests
+
+Responsive layout for web browsers
+
+🌐 API Information
+
+API Provider: OpenWeather
+
+Base URL: https://api.openweathermap.org/
+
+Authentication: API Key (required)
+
+Endpoints Used
+
+Direct Geocoding API
+
+Current Weather Data API
+
+5-Day / Daily Forecast API
+
+Only the necessary fields from the API response are utilized and displayed.
+
+⚙️ How to Run the Project
+
+Clone the repository:
+
+git clone https://github.com/USERNAME/Weather.git
+
+
+Open index.html in a web browser
+(or run using a simple local server for best results)
+
+🔐 API Key Notice
+
+This project uses a placeholder API key for security purposes.
+
+const API_KEY = "YOUR_API_KEY_HERE";
+
+
+To test the application, replace the placeholder with your own OpenWeather API key.
+API keys should never be committed to public repositories.
+
+🧠 Technical Highlights
+
+Uses fetch() with async/await
+
+Modular JavaScript functions
+
+Clear separation of API logic, DOM manipulation, and utility functions
+
+Comprehensive in-code documentation and comments
